@@ -1,5 +1,15 @@
-<h1>New Article</h1>
+<h1>Create an article</h1>
 
-<%= render 'form', article: @article %>
-
-<%= link_to 'Back', articles_path %>
+<%= form_for @article do |m| %>
+  <p>
+    <%= m.label :title %> <br/>
+    <%= m.text_field :title %>
+  </p>
+  <p>
+    <%= m.label :description %>
+    <%= m.text_area :description %>
+  </p>
+  <p>
+    <%= m.submit %>
+  </p>
+<% end %>
